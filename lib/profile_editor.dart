@@ -28,6 +28,17 @@ class _ProfileEditorState extends State<ProfileEditor> {
             },
             controller: _textInputController,
               // autocorrect: true,
+            decoration: InputDecoration(hintText: 'School Email'),
+          ),
+        TextFormField(
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
+            controller: _textInputController,
+              // autocorrect: true,
             decoration: InputDecoration(hintText: 'First Name'),
           ),
         TextFormField(
