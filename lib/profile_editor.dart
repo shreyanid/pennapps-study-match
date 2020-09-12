@@ -18,7 +18,9 @@ class _ProfileEditorState extends State<ProfileEditor> {
         title: Text('MA+CH'),
         centerTitle: true,
       ),
-      body: Column(children: [
+      body: Form(
+      key: _formKey,
+      child: Column(children: [
         TextFormField(
             validator: (value) {
               if (value.isEmpty) {
@@ -134,6 +136,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
           ),
         ),
       ]),
+      )
     );
   }
 }
