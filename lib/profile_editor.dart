@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ProfileEditor extends StatefulWidget {
+  ProfileEditor({Key key}) : super(key: key);
   @override
   State<StatefulWidget> createState() {
     return _ProfileEditorState();
@@ -9,8 +10,10 @@ class ProfileEditor extends StatefulWidget {
 
 // copy the profile code but turn the text into text inputs
 class _ProfileEditorState extends State<ProfileEditor> {
+  final String email;
+  final String fname;
   final _formKey = GlobalKey<FormState>();
- TextEditingController _textInputController = TextEditingController();
+// TextEditingController _textInputController = TextEditingController();
 @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +33,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
               }
               return null;
             },
-            controller: _textInputController,
+           // controller: _textInputController,
               // autocorrect: true,
             decoration: InputDecoration(hintText: 'School Email'),
             keyboardType: TextInputType.emailAddress,
@@ -42,79 +45,79 @@ class _ProfileEditorState extends State<ProfileEditor> {
               }
               return null;
             },
-            controller: _textInputController,
+   //         controller: _textInputController,
               // autocorrect: true,
             decoration: InputDecoration(hintText: 'First Name'),
             keyboardType: TextInputType.name,
           ),
-        TextFormField(
-            validator: (value) {
-              if (value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-            controller: _textInputController,
-              // autocorrect: true,
-            decoration: InputDecoration(hintText: 'Last Name'),
-            keyboardType: TextInputType.name,
-          ),
-        TextFormField(
-            validator: (value) {
-              if (value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-            controller: _textInputController,
-              // autocorrect: true,
-            decoration: InputDecoration(hintText: 'Pronouns'),
-          ),
-        TextFormField(
-            validator: (value) {
-              if (value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-            controller: _textInputController,
-              // autocorrect: true,
-            decoration: InputDecoration(hintText: 'College/University'),
-          ),
-        TextFormField(
-            validator: (value) {
-              if (value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-            controller: _textInputController,
-              // autocorrect: true,
-            decoration: InputDecoration(hintText: 'Year in college (1st year should type "1"'),
-          ),
-        TextFormField(
-            validator: (value) {
-              if (value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-            controller: _textInputController,
-              // autocorrect: true,
-            decoration: InputDecoration(hintText: 'Major'),
-          ),
-        TextFormField(
-            validator: (value) {
-              if (value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-            controller: _textInputController,
-              // autocorrect: true,
-            decoration: InputDecoration(hintText: 'Bio'),
-            keyboardType: TextInputType.multiline,
-          ),
+        // TextFormField(
+        //     validator: (value) {
+        //       if (value.isEmpty) {
+        //         return 'Please enter some text';
+        //       }
+        //       return null;
+        //     },
+        //     controller: _textInputController,
+        //       // autocorrect: true,
+        //     decoration: InputDecoration(hintText: 'Last Name'),
+        //     keyboardType: TextInputType.name,
+        //   ),
+        // TextFormField(
+        //     validator: (value) {
+        //       if (value.isEmpty) {
+        //         return 'Please enter some text';
+        //       }
+        //       return null;
+        //     },
+        //     controller: _textInputController,
+        //       // autocorrect: true,
+        //     decoration: InputDecoration(hintText: 'Pronouns'),
+        //   ),
+        // TextFormField(
+        //     validator: (value) {
+        //       if (value.isEmpty) {
+        //         return 'Please enter some text';
+        //       }
+        //       return null;
+        //     },
+        //     controller: _textInputController,
+        //       // autocorrect: true,
+        //     decoration: InputDecoration(hintText: 'College/University'),
+        //   ),
+        // TextFormField(
+        //     validator: (value) {
+        //       if (value.isEmpty) {
+        //         return 'Please enter some text';
+        //       }
+        //       return null;
+        //     },
+        //     controller: _textInputController,
+        //       // autocorrect: true,
+        //     decoration: InputDecoration(hintText: 'Year in college (1st year should type "1"'),
+        //   ),
+        // TextFormField(
+        //     validator: (value) {
+        //       if (value.isEmpty) {
+        //         return 'Please enter some text';
+        //       }
+        //       return null;
+        //     },
+        //     controller: _textInputController,
+        //       // autocorrect: true,
+        //     decoration: InputDecoration(hintText: 'Major'),
+        //   ),
+        // TextFormField(
+        //     validator: (value) {
+        //       if (value.isEmpty) {
+        //         return 'Please enter some text';
+        //       }
+        //       return null;
+        //     },
+        //     controller: _textInputController,
+        //       // autocorrect: true,
+        //     decoration: InputDecoration(hintText: 'Bio'),
+        //     keyboardType: TextInputType.multiline,
+        //   ),
         
         Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -123,6 +126,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
                 // Validate will return true if the form is valid, or false if
                 // the form is invalid.
                 if (_formKey.currentState.validate()) {
+                  _formKey.currentState.save();
                   // Process data.
                 }
               },
