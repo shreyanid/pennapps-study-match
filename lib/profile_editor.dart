@@ -17,6 +17,11 @@ class _ProfileEditorState extends State<ProfileEditor> {
   final _formKey = GlobalKey<FormState>();
   ProfileModel model = ProfileModel();
 
+//pronouns
+final pronounList = ['she/her/hers', 
+                     'he/him/his',
+                     'they/them/theirs'];
+
 // TextEditingController _textInputController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -30,6 +35,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
+                
                 MyTextFormField(
                   hintText: 'Email',
                   isEmail: true,
@@ -55,75 +61,77 @@ class _ProfileEditorState extends State<ProfileEditor> {
                     model.firstName = value;
                   },
                 ),
-                // TextFormField(
-                //     validator: (value) {
-                //       if (value.isEmpty) {
-                //         return 'Please enter some text';
-                //       }
-                //       return null;
-                //     },
-                //     controller: _textInputController,
-                //       // autocorrect: true,
-                //     decoration: InputDecoration(hintText: 'Last Name'),
-                //     keyboardType: TextInputType.name,
-                //   ),
-                // TextFormField(
-                //     validator: (value) {
-                //       if (value.isEmpty) {
-                //         return 'Please enter some text';
-                //       }
-                //       return null;
-                //     },
-                //     controller: _textInputController,
-                //       // autocorrect: true,
-                //     decoration: InputDecoration(hintText: 'Pronouns'),
-                //   ),
-                // TextFormField(
-                //     validator: (value) {
-                //       if (value.isEmpty) {
-                //         return 'Please enter some text';
-                //       }
-                //       return null;
-                //     },
-                //     controller: _textInputController,
-                //       // autocorrect: true,
-                //     decoration: InputDecoration(hintText: 'College/University'),
-                //   ),
-                // TextFormField(
-                //     validator: (value) {
-                //       if (value.isEmpty) {
-                //         return 'Please enter some text';
-                //       }
-                //       return null;
-                //     },
-                //     controller: _textInputController,
-                //       // autocorrect: true,
-                //     decoration: InputDecoration(hintText: 'Year in college (1st year should type "1"'),
-                //   ),
-                // TextFormField(
-                //     validator: (value) {
-                //       if (value.isEmpty) {
-                //         return 'Please enter some text';
-                //       }
-                //       return null;
-                //     },
-                //     controller: _textInputController,
-                //       // autocorrect: true,
-                //     decoration: InputDecoration(hintText: 'Major'),
-                //   ),
-                // TextFormField(
-                //     validator: (value) {
-                //       if (value.isEmpty) {
-                //         return 'Please enter some text';
-                //       }
-                //       return null;
-                //     },
-                //     controller: _textInputController,
-                //       // autocorrect: true,
-                //     decoration: InputDecoration(hintText: 'Bio'),
-                //     keyboardType: TextInputType.multiline,
-                //   ),
-
+                MyTextFormField(
+                  hintText: 'Last Name',
+                  validator: (String value) {
+                    if (value.isEmpty) {
+                      return 'Enter your last name';
+                    }
+                    return null;
+                  },
+                  onSaved: (String value) {
+                    model.lastName = value;
+                  },
+                ),
+                MyTextFormField(
+                  hintText: 'Pronouns in format she/her/hers, they/them/theirs or he/him/his',
+                  validator: (value) {
+                    if (!value.pronounList()) {
+                      return 'Please enter valid pronouns';
+                    }
+                  },
+                  onSaved: (String value) {
+                    model.pronouns = value;
+                  },
+                ),
+                MyTextFormField(
+                  hintText: 'Full name of College/University with first letters capitalized (ex: Rice University)',
+                  validator: (String value) {
+                    if (value.isEmpty) {
+                      return 'Not a valid college/university';
+                    }
+                    return null;
+                  },
+                  onSaved: (String value) {
+                    model.school = value;
+                  },
+                ),
+                MyTextFormField(
+                  hintText: 'Last Name',
+                  validator: (int value) {
+                    if (value > 10) {
+                      return 'Not a valid number';
+                    }
+                    return null;
+                  },
+                  onSaved: (int value) {
+                    model.year = value;
+                  },
+                ),
+                MyTextFormField(
+                  hintText: 'Major',
+                  validator: (String value) {
+                    if (value.isEmpty) {
+                      return 'Please enter a valid major';
+                    }
+                    return null;
+                  },
+                  onSaved: (String value) {
+                    model.major = value;
+                  },
+                ),
+                MyTextFormField(
+                  hintText: 'Bio - add info you wish to display to potential matches!',
+                  validator: (String value) {
+                    if (value.isEmpty) {
+                      return 'Please do not leave blank :(';
+                    }
+                    return null;
+                  },
+                  onSaved: (String value) {
+                    model.bio = value;
+                  },
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
                   child: RaisedButton(
@@ -204,86 +212,3 @@ class MyTextFormField extends StatelessWidget {
     );
   }
 }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('MA+CH'),
-//         centerTitle: true,
-//       ),
-//       body: Column(children: [
-//         RaisedButton(
-//           onPressed: () {
-//             Navigator.pop(context);
-//           },
-//           child: Text('Done editing!'),
-//         ),
-//         // Icon(Icons.done),
-//         // IconButton(
-//         //   icon: Icon(Icons.done),
-//         //   tooltip: 'Done editing your profile',
-//         //   onPressed: () {
-//         //     Navigator.pop(context);
-//         //   },
-//         // ),
-//         Container(
-//           // margin: EdgeInsets.all(20.0),
-//           // padding: EdgeInsets.all(20.0),
-//           child: Center(
-//             child: Padding(
-//               padding: EdgeInsets.all(20.0),
-//               child: Column(children: [
-//                 Text('First Name'),
-//                 Text('Year'),
-//                 Text('Pronouns'),
-//                 Text('Major'),
-//                 Text('Bio'),
-//                 Column(
-//                   children: [Text('Course 1'), Text('Course 2')],
-//                 )
-//               ]),
-//             ),
-//           ),
-//         ),
-//       ]),
-//     );
-//   }
-// }
-
-//     return Column(children: [
-//       RaisedButton(
-//         onPressed: () {
-//           Navigator.pop(context);
-//         },
-//         child: Text('Done editing!'),
-//       ),
-//       // Icon(Icons.done),
-//       // IconButton(
-//       //   icon: Icon(Icons.done),
-//       //   tooltip: 'Done editing your profile',
-//       //   onPressed: () {
-//       //     Navigator.pop(context);
-//       //   },
-//       // ),
-//       Container(
-//         // margin: EdgeInsets.all(20.0),
-//         // padding: EdgeInsets.all(20.0),
-//         child: Center(
-//           child: Padding(
-//             padding: EdgeInsets.all(20.0),
-//             child: Column(children: [
-//               Text('First Name'),
-//               Text('Year'),
-//               Text('Pronouns'),
-//               Text('Major'),
-//               Column(
-//                 children: [Text('Course 1'), Text('Course 2')],
-//               )
-//             ]),
-//           ),
-//         ),
-//       ),
-//     ]);
-//   }
-// }
