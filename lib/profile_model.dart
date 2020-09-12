@@ -6,7 +6,7 @@ class ProfileModel {
   String lastName;
   String pronouns;
   String school;
-  int year;
+  String year;
   String major;
   String bio;
 

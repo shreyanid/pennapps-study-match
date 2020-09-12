@@ -97,7 +97,7 @@ final pronounList = ['she/her/hers',
                   },
                 ),
                 MyTextFormField(
-                  hintText: 'Last Name',
+                  hintText: '# Years in School (ie 1st year = 1)',
                   validator: (int value) {
                     if (value > 10) {
                       return 'Not a valid number';
@@ -105,7 +105,7 @@ final pronounList = ['she/her/hers',
                     return null;
                   },
                   onSaved: (int value) {
-                    model.year = value;
+                    model.year = value.toString();
                   },
                 ),
                 MyTextFormField(
