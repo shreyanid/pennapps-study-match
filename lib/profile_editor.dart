@@ -20,7 +20,9 @@ class _ProfileEditorState extends State<ProfileEditor> {
       ),
       body: Form(
       key: _formKey,
-      child: Column(children: [
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
         TextFormField(
             validator: (value) {
               if (value.isEmpty) {
@@ -110,22 +112,32 @@ class _ProfileEditorState extends State<ProfileEditor> {
             decoration: InputDecoration(hintText: 'Bio'),
           ),
         
-        RaisedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Done editing!'),
-        ),
+        Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: RaisedButton(
+              onPressed: () {
+                // Validate will return true if the form is valid, or false if
+                // the form is invalid.
+                if (_formKey.currentState.validate()) {
+                  // Process data.
+                }
+              },
+              child: Text('Submit'),
+            ),
+          ),
         Container(
           // margin: EdgeInsets.all(20.0),
           // padding: EdgeInsets.all(20.0),
           child: Center(
             child: Padding(
               padding: EdgeInsets.all(20.0),
+              
               child: Column(children: [
-                Text('First Name'),
-                Text('Year'),
+                Text('First Name' + ' ' + 'Last Name'),
+                Text('email'),
                 Text('Pronouns'),
+                Text('College/University'),
+                Text('Year'),
                 Text('Major'),
                 Text('Bio'),
                 Column(
