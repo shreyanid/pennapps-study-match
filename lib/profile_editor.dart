@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:email_validator/email_validator.dart';
+
+import './profile_model.dart';
+import './tempresults.dart';
 
 class ProfileEditor extends StatefulWidget {
   ProfileEditor({Key key}) : super(key: key);
@@ -11,6 +15,8 @@ class ProfileEditor extends StatefulWidget {
 // copy the profile code but turn the text into text inputs
 class _ProfileEditorState extends State<ProfileEditor> {
   final _formKey = GlobalKey<FormState>();
+  ProfileModel model = ProfileModel();
+
 // TextEditingController _textInputController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -24,29 +30,30 @@ class _ProfileEditorState extends State<ProfileEditor> {
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                TextFormField(
+                MyTextFormField(
+                  hintText: 'Email',
+                  isEmail: true,
                   validator: (String value) {
-                    if (!validator.isEmail(value)) {
+                    if (!EmailValidator.validate(value)) {
                       return 'Please enter a valid email';
                     }
                     return null;
                   },
-                  // controller: _textInputController,
-                  // autocorrect: true,
-                  decoration: InputDecoration(hintText: 'School Email'),
-                  keyboardType: TextInputType.emailAddress,
+                  onSaved: (String value) {
+                    model.email = value;
+                  },
                 ),
-                TextFormField(
+                MyTextFormField(
+                  hintText: 'First Name',
                   validator: (String value) {
                     if (value.isEmpty) {
                       return 'Enter your first name';
                     }
                     return null;
                   },
-                  //         controller: _textInputController,
-                  // autocorrect: true,
-                  decoration: InputDecoration(hintText: 'First Name'),
-                  keyboardType: TextInputType.name,
+                  onSaved: (String value) {
+                    model.firstName = value;
+                  },
                 ),
                 // TextFormField(
                 //     validator: (value) {
@@ -120,39 +127,46 @@ class _ProfileEditorState extends State<ProfileEditor> {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
                   child: RaisedButton(
+                    color: Colors.blueAccent,
                     onPressed: () {
-                      // Validate will return true if the form is valid, or false if
-                      // the form is invalid.
                       if (_formKey.currentState.validate()) {
                         _formKey.currentState.save();
-                        // Navigator.pop(context);
-                        // Process data.
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    Result(model: this.model)));
                       }
                     },
-                    child: Text('Submit'),
-                  ),
-                ),
-                Container(
-                  // margin: EdgeInsets.all(20.0),
-                  // padding: EdgeInsets.all(20.0),
-                  child: Center(
-                    child: Padding(
-                      padding: EdgeInsets.all(20.0),
-                      child: Column(children: [
-                        Text('First Name' + ' ' + 'Last Name'),
-                        Text('email'),
-                        Text('Pronouns'),
-                        Text('College/University'),
-                        Text('Year'),
-                        Text('Major'),
-                        Text('Bio'),
-                        Column(
-                          children: [Text('Course 1'), Text('Course 2')],
-                        )
-                      ]),
+                    child: Text(
+                      'Sign Up',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
+                // Container(
+                //   // margin: EdgeInsets.all(20.0),
+                //   // padding: EdgeInsets.all(20.0),
+                //   child: Center(
+                //     child: Padding(
+                //       padding: EdgeInsets.all(20.0),
+                //       child: Column(children: [
+                //         Text('First Name' + ' ' + 'Last Name'),
+                //         Text('email'),
+                //         Text('Pronouns'),
+                //         Text('College/University'),
+                //         Text('Year'),
+                //         Text('Major'),
+                //         Text('Bio'),
+                //         Column(
+                //           children: [Text('Course 1'), Text('Course 2')],
+                //         )
+                //       ]),
+                //     ),
+                //   ),
+                // ),
               ]),
         ));
   }

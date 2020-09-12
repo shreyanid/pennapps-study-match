@@ -1,6 +1,6 @@
 // import 'package:flutter/material.dart';
 
-class Model {
+class ProfileModel {
   String email;
   String firstName;
   String lastName;
@@ -10,7 +10,7 @@ class Model {
   String major;
   String bio;
 
-  Model(
+  ProfileModel(
       {this.email,
       this.firstName,
       this.lastName,
