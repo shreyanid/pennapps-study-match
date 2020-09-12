@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
   int _selectedIndex = 1;
 
   final List<Widget> _children = [
-    Text("This is the find page"),
+    // Text("This is the find page"),
     MatchManager(startingMatch: 'Shreya Test'),
     Profile(),
   ];
@@ -37,10 +37,10 @@ class _HomeState extends State<Home> {
       // body: MatchManager(startingMatch: 'Shreya Test'),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.filter_list),
-            title: Text('Find'),
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.filter_list),
+          //   title: Text('Find'),
+          // ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
             title: Text('MA+CH'),
