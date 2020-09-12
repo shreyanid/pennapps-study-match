@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:study_match/profile.dart';
 
 import './matches_manager.dart';
+import './profile.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -15,7 +17,7 @@ class _HomeState extends State<Home> {
   final List<Widget> _children = [
     Text("This is the find page"),
     MatchManager(startingMatch: 'Shreya Test'),
-    Text("this is the profile page"),
+    Profile(),
   ];
 
   void _onItemTapped(int index) {
