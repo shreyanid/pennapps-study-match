@@ -10,8 +10,8 @@ class ProfileEditor extends StatefulWidget {
 // copy the profile code but turn the text into text inputs
 class _ProfileEditorState extends State<ProfileEditor> {
   final _formKey = GlobalKey<FormState>();
-
-  @override
+ TextEditingController _textInputController = TextEditingController();
+@override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -19,20 +19,90 @@ class _ProfileEditorState extends State<ProfileEditor> {
         centerTitle: true,
       ),
       body: Column(children: [
+        TextFormField(
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
+            controller: _textInputController,
+              // autocorrect: true,
+            decoration: InputDecoration(hintText: 'First Name'),
+          ),
+        TextFormField(
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
+            controller: _textInputController,
+              // autocorrect: true,
+            decoration: InputDecoration(hintText: 'Last Name'),
+          ),
+        TextFormField(
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
+            controller: _textInputController,
+              // autocorrect: true,
+            decoration: InputDecoration(hintText: 'Pronouns'),
+          ),
+        TextFormField(
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
+            controller: _textInputController,
+              // autocorrect: true,
+            decoration: InputDecoration(hintText: 'College/University'),
+          ),
+        TextFormField(
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
+            controller: _textInputController,
+              // autocorrect: true,
+            decoration: InputDecoration(hintText: 'Year'),
+          ),
+        TextFormField(
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
+            controller: _textInputController,
+              // autocorrect: true,
+            decoration: InputDecoration(hintText: 'Major'),
+          ),
+        TextFormField(
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
+            controller: _textInputController,
+              // autocorrect: true,
+            decoration: InputDecoration(hintText: 'Bio'),
+          ),
+        
         RaisedButton(
           onPressed: () {
             Navigator.pop(context);
           },
           child: Text('Done editing!'),
         ),
-        // Icon(Icons.done),
-        // IconButton(
-        //   icon: Icon(Icons.done),
-        //   tooltip: 'Done editing your profile',
-        //   onPressed: () {
-        //     Navigator.pop(context);
-        //   },
-        // ),
         Container(
           // margin: EdgeInsets.all(20.0),
           // padding: EdgeInsets.all(20.0),
@@ -44,6 +114,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
                 Text('Year'),
                 Text('Pronouns'),
                 Text('Major'),
+                Text('Bio'),
                 Column(
                   children: [Text('Course 1'), Text('Course 2')],
                 )
@@ -55,6 +126,52 @@ class _ProfileEditorState extends State<ProfileEditor> {
     );
   }
 }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('MA+CH'),
+//         centerTitle: true,
+//       ),
+//       body: Column(children: [
+//         RaisedButton(
+//           onPressed: () {
+//             Navigator.pop(context);
+//           },
+//           child: Text('Done editing!'),
+//         ),
+//         // Icon(Icons.done),
+//         // IconButton(
+//         //   icon: Icon(Icons.done),
+//         //   tooltip: 'Done editing your profile',
+//         //   onPressed: () {
+//         //     Navigator.pop(context);
+//         //   },
+//         // ),
+//         Container(
+//           // margin: EdgeInsets.all(20.0),
+//           // padding: EdgeInsets.all(20.0),
+//           child: Center(
+//             child: Padding(
+//               padding: EdgeInsets.all(20.0),
+//               child: Column(children: [
+//                 Text('First Name'),
+//                 Text('Year'),
+//                 Text('Pronouns'),
+//                 Text('Major'),
+//                 Text('Bio'),
+//                 Column(
+//                   children: [Text('Course 1'), Text('Course 2')],
+//                 )
+//               ]),
+//             ),
+//           ),
+//         ),
+//       ]),
+//     );
+//   }
+// }
 
 //     return Column(children: [
 //       RaisedButton(
