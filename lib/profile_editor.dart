@@ -33,6 +33,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
             controller: _textInputController,
               // autocorrect: true,
             decoration: InputDecoration(hintText: 'School Email'),
+            keyboardType: TextInputType.emailAddress,
           ),
         TextFormField(
             validator: (value) {
@@ -44,6 +45,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
             controller: _textInputController,
               // autocorrect: true,
             decoration: InputDecoration(hintText: 'First Name'),
+            keyboardType: TextInputType.name,
           ),
         TextFormField(
             validator: (value) {
@@ -55,6 +57,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
             controller: _textInputController,
               // autocorrect: true,
             decoration: InputDecoration(hintText: 'Last Name'),
+            keyboardType: TextInputType.name,
           ),
         TextFormField(
             validator: (value) {
@@ -87,7 +90,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
             },
             controller: _textInputController,
               // autocorrect: true,
-            decoration: InputDecoration(hintText: 'Year'),
+            decoration: InputDecoration(hintText: 'Year in college (1st year should type "1"'),
           ),
         TextFormField(
             validator: (value) {
@@ -110,6 +113,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
             controller: _textInputController,
               // autocorrect: true,
             decoration: InputDecoration(hintText: 'Bio'),
+            keyboardType: TextInputType.multiline,
           ),
         
         Padding(
