@@ -12,12 +12,12 @@ class SplashScreen extends StatelessWidget {
           Text('MA+CH', style: TextStyle(fontSize: 48)),
           Text('', style: TextStyle(fontSize: 18)),
           RaisedButton(
-            color: Colors.blueAccent,
+              color: Colors.blueAccent,
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ProfileEditor()));
               },
-              child: Text('Sign Up', style: TextStyle(fontSize: 36)))
+              child: Text('Sign Up', style: TextStyle(fontSize: 26)))
         ]),
       ]),
     ));
