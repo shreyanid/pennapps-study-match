@@ -25,6 +25,21 @@ class Result extends StatelessWidget {
                 style: TextStyle(fontSize: 18)),
             Text(model.major, style: TextStyle(fontSize: 18)),
             Text(model.bio, style: TextStyle(fontSize: 18)),
+            Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
+                  child: RaisedButton(
+                    color: Colors.blueAccent,
+                    onPressed: () {
+                      },
+                    
+                    child: Text(
+                      'Edit Profile',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+            ),
           ],
         ),
       ),
