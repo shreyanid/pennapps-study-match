@@ -31,8 +31,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(context) {
-    return MaterialApp(
-        home: Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: Text('MA+CH'),
         centerTitle: true,
@@ -58,6 +57,6 @@ class _HomeState extends State<Home> {
         selectedItemColor: Theme.of(context).accentColor,
         onTap: _onItemTapped,
       ),
-    ));
+    );
   }
 }
