@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:study_match/the_matches.dart';
 
 import './matches_manager.dart';
 import './profile_editor.dart';
@@ -19,7 +20,8 @@ class _HomeState extends State<Home> {
     // MatchManager(startingMatch: 'Shreya Test'),
     // Profile(),
     // ProfileEditor(),
-    MatchManager(startingMatch: 'Shreya Test'),
+    // MatchManager(startingMatch: 'Shreya Test'),
+    TheMatches(),
     Result(),
   ];
 
