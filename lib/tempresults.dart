@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'profile_model.dart';
 
 class Result extends StatelessWidget {
-  ProfileModel model;
+  final ProfileModel model;
 
   Result({this.model});
 
@@ -16,11 +16,13 @@ class Result extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text("Profile", style: TextStyle(fontSize: 22)),
-            Text(model.firstName + model.lastName, style: TextStyle(fontSize: 18)),
+            Text(model.firstName + model.lastName,
+                style: TextStyle(fontSize: 18)),
             Text(model.school, style: TextStyle(fontSize: 18)),
             Text(model.email, style: TextStyle(fontSize: 18)),
             Text(model.pronouns, style: TextStyle(fontSize: 18)),
-            Text("Year:" + model.year.toString(), style: TextStyle(fontSize: 18)),
+            Text("Year:" + model.year.toString(),
+                style: TextStyle(fontSize: 18)),
             Text(model.major, style: TextStyle(fontSize: 18)),
             Text(model.bio, style: TextStyle(fontSize: 18)),
           ],
