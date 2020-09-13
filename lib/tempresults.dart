@@ -15,8 +15,14 @@ class Result extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(model.firstName, style: TextStyle(fontSize: 22)),
-            Text(model.email, style: TextStyle(fontSize: 22)),
+            Text("Profile", style: TextStyle(fontSize: 22)),
+            Text(model.firstName + model.lastName, style: TextStyle(fontSize: 18)),
+            Text(model.school, style: TextStyle(fontSize: 18)),
+            Text(model.email, style: TextStyle(fontSize: 18)),
+            Text(model.pronouns, style: TextStyle(fontSize: 18)),
+            Text("Year:" + model.year.toString(), style: TextStyle(fontSize: 18)),
+            Text(model.major, style: TextStyle(fontSize: 18)),
+            Text(model.bio, style: TextStyle(fontSize: 18)),
           ],
         ),
       ),
