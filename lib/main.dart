@@ -10,12 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(context) {
-    return MaterialApp(
-        theme: ThemeData(
-          primarySwatch: Colors.lightBlue[50],
-          accentColor: Colors.blue[900],
-        ),
-        home: SplashScreen());
+    return MaterialApp(home: SplashScreen());
     // Home());
   }
 }
