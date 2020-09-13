@@ -28,32 +28,37 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('MA+CH'),
-        centerTitle: true,
-      ),
-      body: _children[_selectedIndex],
-      // body: MatchManager(startingMatch: 'Shreya Test'),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          // BottomNavigationBarItem(
-          //   icon: Icon(Icons.filter_list),
-          //   title: Text('Find'),
-          // ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
+    return MaterialApp(
+        theme: ThemeData(
+          primarySwatch: Colors.cyan,
+          accentColor: Colors.deepPurpleAccent,
+        ),
+        home: Scaffold(
+          appBar: AppBar(
             title: Text('MA+CH'),
+            centerTitle: true,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            title: Text('Profile'),
+          body: _children[_selectedIndex],
+          // body: MatchManager(startingMatch: 'Shreya Test'),
+          bottomNavigationBar: BottomNavigationBar(
+            items: const <BottomNavigationBarItem>[
+              // BottomNavigationBarItem(
+              //   icon: Icon(Icons.filter_list),
+              //   title: Text('Find'),
+              // ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.school),
+                title: Text('MA+CH'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                title: Text('Profile'),
+              ),
+            ],
+            currentIndex: _selectedIndex,
+            selectedItemColor: Theme.of(context).accentColor,
+            onTap: _onItemTapped,
           ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Theme.of(context).accentColor,
-        onTap: _onItemTapped,
-      ),
-    );
+        ));
   }
 }
