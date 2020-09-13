@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart'
 import './profile_model.dart';
 import './tempresults.dart';
 
@@ -16,7 +16,7 @@ class ProfileEditor extends StatefulWidget {
 class _ProfileEditorState extends State<ProfileEditor> {
   final _formKey = GlobalKey<FormState>();
   ProfileModel model = ProfileModel();
-
+  final db=Firestore.instance;
 //pronouns
   final pronounList = ['she/her/hers', 'he/him/his', 'they/them/theirs'];
 
@@ -148,6 +148,20 @@ class _ProfileEditorState extends State<ProfileEditor> {
                                     Result(model: this.model)));
                       }
                     },
+                    onPressed:() async {
+                      await db.collection("users").add(
+                      {
+                        "firstName": model.firstName;
+                        "lastName": model.lastName;
+                        "pronouns": model.pronouns;
+                        "university": model.school;
+                        "email": model.email;
+                        "year": model.year;
+                        "major": model.major;
+                        "bio": model.bio;
+                      }
+                      );
+                    }
                     child: Text(
                       'Sign Up',
                       style: TextStyle(
