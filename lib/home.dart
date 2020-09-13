@@ -4,6 +4,7 @@ import 'package:study_match/the_matches.dart';
 import './matches_manager.dart';
 import './profile_editor.dart';
 import './tempresults.dart';
+import './profile_model.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -13,6 +14,12 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  // ProfileModel model;
+
+  // final ProfileModel model;
+
+  // Result({this.model});
+
   int _selectedIndex = 0;
 
   final List<Widget> _children = [
