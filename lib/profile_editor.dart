@@ -18,9 +18,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
   ProfileModel model = ProfileModel();
 
 //pronouns
-final pronounList = ['she/her/hers', 
-                     'he/him/his',
-                     'they/them/theirs'];
+  final pronounList = ['she/her/hers', 'he/him/his', 'they/them/theirs'];
 
 // TextEditingController _textInputController = TextEditingController();
   @override
@@ -35,7 +33,6 @@ final pronounList = ['she/her/hers',
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                
                 MyTextFormField(
                   hintText: 'Email',
                   isEmail: true,
@@ -74,9 +71,10 @@ final pronounList = ['she/her/hers',
                   },
                 ),
                 MyTextFormField(
-                  hintText: 'Pronouns in format she/her/hers, they/them/theirs or he/him/his',
+                  hintText:
+                      'Pronouns in format she/her/hers, they/them/theirs or he/him/his',
                   validator: (value) {
-                    if (!value.pronounList()) {
+                    if (pronounList.contains(value)) {
                       return 'Please enter valid pronouns';
                     }
                   },
@@ -85,7 +83,8 @@ final pronounList = ['she/her/hers',
                   },
                 ),
                 MyTextFormField(
-                  hintText: 'Full name of College/University with first letters capitalized (ex: Rice University)',
+                  hintText:
+                      'Full name of College/University with first letters capitalized (ex: Rice University)',
                   validator: (String value) {
                     if (value.isEmpty) {
                       return 'Not a valid college/university';
@@ -98,14 +97,16 @@ final pronounList = ['she/her/hers',
                 ),
                 MyTextFormField(
                   hintText: '# Years in School (ie 1st year = 1)',
-                  validator: (int value) {
-                    if (value > 10) {
+                  validator: (String value) {
+                    if (int.parse(value).isNaN) {
                       return 'Not a valid number';
+                      // try catch?
+                      // Another exception was thrown: FormatException: Invalid radix-10 number (at character 1)
                     }
                     return null;
                   },
-                  onSaved: (int value) {
-                    model.year = value.toString();
+                  onSaved: (value) {
+                    model.year = int.parse(value);
                   },
                 ),
                 MyTextFormField(
@@ -121,7 +122,8 @@ final pronounList = ['she/her/hers',
                   },
                 ),
                 MyTextFormField(
-                  hintText: 'Bio - add info you wish to display to potential matches!',
+                  hintText:
+                      'Bio - add info you wish to display to potential matches!',
                   validator: (String value) {
                     if (value.isEmpty) {
                       return 'Please do not leave blank :(';
