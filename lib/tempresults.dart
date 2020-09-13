@@ -37,7 +37,9 @@ class Result extends StatelessWidget {
             Text("", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             Text(model.bio, style: TextStyle(fontSize: 36)),
             Padding(
+              
                   padding: const EdgeInsets.symmetric(vertical: 30),
+                  child: Center(
                   child: RaisedButton(
                     color: Colors.blueAccent,
                     onPressed: () {
@@ -52,7 +54,7 @@ class Result extends StatelessWidget {
                       ),
                     ),
                   ),
-            
+                  ),
             ),
         
           ],
