@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
     // Text("This is the find page"),
     // MatchManager(startingMatch: 'Shreya Test'),
     // Profile(),
-    ProfileEditor(),
+    // ProfileEditor(),
     MatchManager(startingMatch: 'Shreya Test'),
     Result(),
   ];
@@ -45,10 +45,10 @@ class _HomeState extends State<Home> {
           // body: MatchManager(startingMatch: 'Shreya Test'),
           bottomNavigationBar: BottomNavigationBar(
             items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.create),
-                title: Text('Sign Up'),
-              ),
+              // BottomNavigationBarItem(
+              //   icon: Icon(Icons.create),
+              //   title: Text('Sign Up'),
+              // ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.school),
                 title: Text('MA+CH'),
