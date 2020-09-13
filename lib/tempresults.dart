@@ -41,7 +41,8 @@ class Result extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 30),
                   child: Center(
                   child: RaisedButton(
-                    color: Colors.blueAccent,
+                    color: Theme.of(context).accentColor,
+
                     onPressed: () {
                       },
                     
