@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
+
 import './profile_model.dart';
 import './tempresults.dart';
+import './home.dart';
 // import 'dart:async';
 
 class ProfileEditor extends StatefulWidget {
@@ -143,11 +145,8 @@ class _ProfileEditorState extends State<ProfileEditor> {
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
                         _formKey.currentState.save();
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    Result(model: this.model)));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Home()));
                       }
                     },
                     child: Text(

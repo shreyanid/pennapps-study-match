@@ -9,7 +9,103 @@ class TheMatches extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Column(children: []);
+    return Column(children: [
+      Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const ListTile(
+              leading: Icon(Icons.person_pin),
+              title: Text('Jennifer Adams'), // + model.firstName),
+              subtitle: Text('CS @ Rice'),
+            ),
+            ButtonBar(
+              children: <Widget>[
+                FlatButton(
+                  child: const Text('READ MORE'),
+                  onPressed: () {/* ... */},
+                ),
+                FlatButton(
+                  child: const Text('CONNECT'),
+                  onPressed: () {/* ... */},
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+      Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const ListTile(
+              leading: Icon(Icons.person_pin),
+              title: Text('Shreya Nidadavolu'), // + model.firstName),
+              subtitle: Text('CS @ Rice'),
+            ),
+            ButtonBar(
+              children: <Widget>[
+                FlatButton(
+                  child: const Text('READ MORE'),
+                  onPressed: () {/* ... */},
+                ),
+                FlatButton(
+                  child: const Text('CONNECT'),
+                  onPressed: () {/* ... */},
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+      Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const ListTile(
+              leading: Icon(Icons.person_pin),
+              title: Text('Michelle Li'), // + model.firstName),
+              subtitle: Text('CS @ Rice'),
+            ),
+            ButtonBar(
+              children: <Widget>[
+                FlatButton(
+                  child: const Text('READ MORE'),
+                  onPressed: () {/* ... */},
+                ),
+                FlatButton(
+                  child: const Text('CONNECT'),
+                  onPressed: () {/* ... */},
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+      Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const ListTile(
+              leading: Icon(Icons.person_pin),
+              title: Text('Kuhu Halder'), // + model.firstName),
+              subtitle: Text('CS @ Rice'),
+            ),
+            ButtonBar(
+              children: <Widget>[
+                FlatButton(
+                  child: const Text('READ MORE'),
+                  onPressed: () {/* ... */},
+                ),
+                FlatButton(
+                  child: const Text('CONNECT'),
+                  onPressed: () {/* ... */},
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    ]);
   }
 }
