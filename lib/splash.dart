@@ -11,6 +11,7 @@ class SplashScreen extends StatelessWidget {
         Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Text('MA+CH', style: TextStyle(fontSize: 48)),
           RaisedButton(
+            color: Colors.blueAccent,
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ProfileEditor()));
