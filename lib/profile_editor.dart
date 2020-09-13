@@ -137,20 +137,10 @@ class _ProfileEditorState extends State<ProfileEditor> {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: RaisedButton(
+                  child: Center(
+                      child: RaisedButton(
                     color: Colors.blueAccent,
                     onPressed: () {
-                      // await db.collection("users").add({
-                      //   "firstName": model.firstName,
-                      //   "lastName": model.lastName,
-                      //   "pronouns": model.pronouns,
-                      //   "university": model.school,
-                      //   "email": model.email,
-                      //   "year": model.year,
-                      //   "major": model.major,
-                      //   "bio": model.bio,
-                      // });
-
                       if (_formKey.currentState.validate()) {
                         _formKey.currentState.save();
                         Navigator.push(
@@ -159,21 +149,6 @@ class _ProfileEditorState extends State<ProfileEditor> {
                                 builder: (context) =>
                                     Result(model: this.model)));
                       }
-
-                      // async {
-                      //   await db.collection("users").add(
-                      //     {
-                      //       "firstName": model.firstName,
-                      //       "lastName": model.lastName,
-                      //       "pronouns": model.pronouns,
-                      //       "university": model.school,
-                      //       "email": model.email,
-                      //       "year": model.year,
-                      //       "major": model.major,
-                      //       "bio": model.bio,
-                      //     }
-                      //   );
-                      // }
                     },
                     child: Text(
                       'Sign Up',
@@ -181,7 +156,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
                         color: Colors.white,
                       ),
                     ),
-                  ),
+                  )),
                 ),
                 // Container(
                 //   // margin: EdgeInsets.all(20.0),

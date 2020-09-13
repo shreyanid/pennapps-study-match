@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:study_match/profile.dart';
 
 import './matches_manager.dart';
-import './profile.dart';
+import './profile_editor.dart';
+import './tempresults.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -12,12 +12,15 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 0;
 
   final List<Widget> _children = [
     // Text("This is the find page"),
+    // MatchManager(startingMatch: 'Shreya Test'),
+    // Profile(),
+    ProfileEditor(),
     MatchManager(startingMatch: 'Shreya Test'),
-    Profile(),
+    Result(),
   ];
 
   void _onItemTapped(int index) {
@@ -42,10 +45,10 @@ class _HomeState extends State<Home> {
           // body: MatchManager(startingMatch: 'Shreya Test'),
           bottomNavigationBar: BottomNavigationBar(
             items: const <BottomNavigationBarItem>[
-              // BottomNavigationBarItem(
-              //   icon: Icon(Icons.filter_list),
-              //   title: Text('Find'),
-              // ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.create),
+                title: Text('Sign Up'),
+              ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.school),
                 title: Text('MA+CH'),
