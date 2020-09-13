@@ -16,8 +16,10 @@ class Result extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text("Profile", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-            Text("", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+            Text("Profile",
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+            Text("",
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
             Text(model.firstName + model.lastName,
                 style: TextStyle(fontSize: 20)),
             Text(model.school, style: TextStyle(fontSize: 20)),
@@ -28,21 +30,17 @@ class Result extends StatelessWidget {
             Text(model.major, style: TextStyle(fontSize: 20)),
             Text(model.bio, style: TextStyle(fontSize: 20)),
             Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: RaisedButton(
-                    color: Colors.blueAccent,
-                    onPressed: () {
-                      },
-                    
-                    child: Text(
-                      'Edit Profile',
-                      
-                      style: TextStyle(
-                        color: Colors.white,
-                        
-                      ),
-                    ),
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: RaisedButton(
+                color: Colors.blueAccent,
+                onPressed: () {},
+                child: Text(
+                  'Edit Profile',
+                  style: TextStyle(
+                    color: Colors.white,
                   ),
+                ),
+              ),
             ),
           ],
         ),
