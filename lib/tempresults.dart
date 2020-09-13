@@ -12,7 +12,6 @@ class Result extends StatelessWidget {
       appBar: AppBar(title: Text('Successful')),
       
       body: Container(
-        color: Colors.lightBlue[50],
         margin: EdgeInsets.all(10.0),
         alignment: Alignment.center,
         child: Padding(
