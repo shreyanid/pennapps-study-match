@@ -10,6 +10,7 @@ class SplashScreen extends StatelessWidget {
       child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
         Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Text('MA+CH', style: TextStyle(fontSize: 48)),
+          Text('', style: TextStyle(fontSize: 18)),
           RaisedButton(
             color: Colors.blueAccent,
               onPressed: () {
