@@ -6,22 +6,6 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      RaisedButton(
-        onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => ProfileEditor()));
-        },
-        child: Text('Edit Profile!'),
-      ),
-      // IconButton(
-      //   icon: Icon(Icons.edit),
-      //   tooltip: 'Edit your profile',
-      //   onPressed: () {
-      //     // ProfileEditor();
-      //     Navigator.push(context,
-      //         MaterialPageRoute(builder: (context) => ProfileEditor()));
-      //   },
-      // ),
       Container(
         // margin: EdgeInsets.all(20.0),
         // padding: EdgeInsets.all(20.0),
