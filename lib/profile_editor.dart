@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:cloud_firestore/cloud_firestore.dart'
+import 'package:cloud_firestore/cloud_firestore.dart';
 import './profile_model.dart';
 import './tempresults.dart';
+import 'dart:async';
 
 class ProfileEditor extends StatefulWidget {
   ProfileEditor({Key key}) : super(key: key);
@@ -16,7 +17,7 @@ class ProfileEditor extends StatefulWidget {
 class _ProfileEditorState extends State<ProfileEditor> {
   final _formKey = GlobalKey<FormState>();
   ProfileModel model = ProfileModel();
-  final db=Firestore.instance;
+  final db = FirebaseFirestore.instance;
 //pronouns
   final pronounList = ['she/her/hers', 'he/him/his', 'they/them/theirs'];
 
@@ -138,7 +139,18 @@ class _ProfileEditorState extends State<ProfileEditor> {
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
                   child: RaisedButton(
                     color: Colors.blueAccent,
-                    onPressed: () {
+                    onPressed: () async {
+                      await db.collection("users").add({
+                        "firstName": model.firstName,
+                        "lastName": model.lastName,
+                        "pronouns": model.pronouns,
+                        "university": model.school,
+                        "email": model.email,
+                        "year": model.year,
+                        "major": model.major,
+                        "bio": model.bio,
+                      });
+
                       if (_formKey.currentState.validate()) {
                         _formKey.currentState.save();
                         Navigator.push(
@@ -147,21 +159,22 @@ class _ProfileEditorState extends State<ProfileEditor> {
                                 builder: (context) =>
                                     Result(model: this.model)));
                       }
+
+                      // async {
+                      //   await db.collection("users").add(
+                      //     {
+                      //       "firstName": model.firstName,
+                      //       "lastName": model.lastName,
+                      //       "pronouns": model.pronouns,
+                      //       "university": model.school,
+                      //       "email": model.email,
+                      //       "year": model.year,
+                      //       "major": model.major,
+                      //       "bio": model.bio,
+                      //     }
+                      //   );
+                      // }
                     },
-                    onPressed:() async {
-                      await db.collection("users").add(
-                      {
-                        "firstName": model.firstName;
-                        "lastName": model.lastName;
-                        "pronouns": model.pronouns;
-                        "university": model.school;
-                        "email": model.email;
-                        "year": model.year;
-                        "major": model.major;
-                        "bio": model.bio;
-                      }
-                      );
-                    }
                     child: Text(
                       'Sign Up',
                       style: TextStyle(
