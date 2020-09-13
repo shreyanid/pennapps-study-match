@@ -12,19 +12,21 @@ class Result extends StatelessWidget {
       appBar: AppBar(title: Text('Successful')),
       body: Container(
         margin: EdgeInsets.all(10.0),
+        alignment: Alignment.center,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text("Profile", style: TextStyle(fontSize: 22)),
+            Text("Profile", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+            Text("", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
             Text(model.firstName + model.lastName,
-                style: TextStyle(fontSize: 18)),
-            Text(model.school, style: TextStyle(fontSize: 18)),
-            Text(model.email, style: TextStyle(fontSize: 18)),
-            Text(model.pronouns, style: TextStyle(fontSize: 18)),
+                style: TextStyle(fontSize: 20)),
+            Text(model.school, style: TextStyle(fontSize: 20)),
+            Text(model.email, style: TextStyle(fontSize: 20)),
+            Text(model.pronouns, style: TextStyle(fontSize: 20)),
             Text("Year:" + model.year.toString(),
-                style: TextStyle(fontSize: 18)),
-            Text(model.major, style: TextStyle(fontSize: 18)),
-            Text(model.bio, style: TextStyle(fontSize: 18)),
+                style: TextStyle(fontSize: 20)),
+            Text(model.major, style: TextStyle(fontSize: 20)),
+            Text(model.bio, style: TextStyle(fontSize: 20)),
             Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
                   child: RaisedButton(
@@ -34,8 +36,10 @@ class Result extends StatelessWidget {
                     
                     child: Text(
                       'Edit Profile',
+                      
                       style: TextStyle(
                         color: Colors.white,
+                        
                       ),
                     ),
                   ),
