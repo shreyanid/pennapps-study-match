@@ -32,36 +32,32 @@ class _HomeState extends State<Home> {
   @override
   Widget build(context) {
     return MaterialApp(
-        theme: ThemeData(
-          primarySwatch: Colors.cyan,
-          accentColor: Colors.deepPurpleAccent,
-        ),
         home: Scaffold(
-          appBar: AppBar(
+      appBar: AppBar(
+        title: Text('MA+CH'),
+        centerTitle: true,
+      ),
+      body: _children[_selectedIndex],
+      // body: MatchManager(startingMatch: 'Shreya Test'),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.create),
+          //   title: Text('Sign Up'),
+          // ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
             title: Text('MA+CH'),
-            centerTitle: true,
           ),
-          body: _children[_selectedIndex],
-          // body: MatchManager(startingMatch: 'Shreya Test'),
-          bottomNavigationBar: BottomNavigationBar(
-            items: const <BottomNavigationBarItem>[
-              // BottomNavigationBarItem(
-              //   icon: Icon(Icons.create),
-              //   title: Text('Sign Up'),
-              // ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.school),
-                title: Text('MA+CH'),
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                title: Text('Profile'),
-              ),
-            ],
-            currentIndex: _selectedIndex,
-            selectedItemColor: Theme.of(context).accentColor,
-            onTap: _onItemTapped,
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            title: Text('Profile'),
           ),
-        ));
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Theme.of(context).accentColor,
+        onTap: _onItemTapped,
+      ),
+    ));
   }
 }
