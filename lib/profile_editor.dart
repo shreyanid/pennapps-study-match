@@ -3,7 +3,6 @@ import 'package:email_validator/email_validator.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
 
 import './profile_model.dart';
-import './tempresults.dart';
 import './home.dart';
 // import 'dart:async';
 
@@ -74,8 +73,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
                   },
                 ),
                 MyTextFormField(
-                  hintText:
-                      'Pronouns in format she/her/hers',
+                  hintText: 'Pronouns in format she/her/hers',
                   validator: (value) {
                     if (pronounList.contains(value)) {
                       return 'Please enter valid pronouns';
@@ -86,8 +84,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
                   },
                 ),
                 MyTextFormField(
-                  hintText:
-                      'Full name of College/University',
+                  hintText: 'Full name of College/University',
                   validator: (String value) {
                     if (value.isEmpty) {
                       return 'Not a valid college/university';
@@ -125,8 +122,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
                   },
                 ),
                 MyTextFormField(
-                  hintText:
-                      'Bio - add info you wish to display!',
+                  hintText: 'Bio - add info you wish to display!',
                   validator: (String value) {
                     if (value.isEmpty) {
                       return 'Please do not leave blank :(';
@@ -157,27 +153,6 @@ class _ProfileEditorState extends State<ProfileEditor> {
                     ),
                   )),
                 ),
-                // Container(
-                //   // margin: EdgeInsets.all(20.0),
-                //   // padding: EdgeInsets.all(20.0),
-                //   child: Center(
-                //     child: Padding(
-                //       padding: EdgeInsets.all(20.0),
-                //       child: Column(children: [
-                //         Text('First Name' + ' ' + 'Last Name'),
-                //         Text('email'),
-                //         Text('Pronouns'),
-                //         Text('College/University'),
-                //         Text('Year'),
-                //         Text('Major'),
-                //         Text('Bio'),
-                //         Column(
-                //           children: [Text('Course 1'), Text('Course 2')],
-                //         )
-                //       ]),
-                //     ),
-                //   ),
-                // ),
               ]),
         ));
   }
