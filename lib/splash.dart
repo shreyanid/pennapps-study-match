@@ -9,13 +9,13 @@ class SplashScreen extends StatelessWidget {
         body: Container(
       child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
         Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text('MA+CH'),
+          Text('MA+CH', style: TextStyle(fontSize: 48)),
           RaisedButton(
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ProfileEditor()));
               },
-              child: Text('Sign Up'))
+              child: Text('Sign Up', style: TextStyle(fontSize: 36)))
         ]),
       ]),
     ));
